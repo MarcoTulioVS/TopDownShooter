@@ -10,7 +10,8 @@ public class Enemy : ScriptableObject
 
     [SerializeField]
     private float life;
-
+    
+    
     private float currentLife;
 
     [SerializeField]

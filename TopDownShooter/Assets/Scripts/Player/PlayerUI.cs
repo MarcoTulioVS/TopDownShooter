@@ -7,6 +7,7 @@ public class PlayerUI : MonoBehaviour
     public Image lifeAmount;
     public Player player;
 
+    public GameObject explosion;
     void Start()
     {
         
@@ -21,5 +22,13 @@ public class PlayerUI : MonoBehaviour
     void UpdateLife()
     {
         lifeAmount.fillAmount = player.Life / 100;
+
+        if(lifeAmount.fillAmount <= 0)
+        {
+            lifeAmount.fillAmount = 0;
+            explosion.SetActive(true);
+
+            //Chama game over
+        }
     }
 }

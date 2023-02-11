@@ -7,6 +7,8 @@ public class EnemyUI : MonoBehaviour
     public Image lifeAmount;
 
     public Enemy enemy;
+
+    public GameObject explosion;
     void Start()
     {
         enemy.CurrentLife = enemy.Life;
@@ -21,5 +23,11 @@ public class EnemyUI : MonoBehaviour
     private void UpdateLife()
     {
         lifeAmount.fillAmount = enemy.CurrentLife / enemy.Life;
+
+        if(lifeAmount.fillAmount <= 0)
+        {
+            lifeAmount.fillAmount = 0;
+            explosion.SetActive(true);
+        }
     }
 }
