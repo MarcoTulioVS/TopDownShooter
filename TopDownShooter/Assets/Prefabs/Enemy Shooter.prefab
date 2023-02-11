@@ -244,6 +244,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ship: {fileID: 6923671963190019007}
+  pointShoot: {fileID: 6923671962879904267}
+  rbShoot: {fileID: 0}
+  prefabCannonBall: {fileID: 1987575692475023265, guid: 043fc53773433484a993c2786b77c33e, type: 3}
 --- !u!50 &6923671963141813553
 Rigidbody2D:
   serializedVersion: 4
@@ -315,9 +318,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: 5603f29072a2ddb4a8fd53fbca0bb115, type: 2}
   target: {fileID: 0}
-  pointShoot: {fileID: 6923671962879904267}
-  rbShoot: {fileID: 0}
-  prefabCannonBall: {fileID: 1987575692475023265, guid: 043fc53773433484a993c2786b77c33e, type: 3}
 --- !u!61 &6923671963190019004
 BoxCollider2D:
   m_ObjectHideFlags: 0

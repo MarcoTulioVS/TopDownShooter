@@ -11,6 +11,12 @@ public class EnemyCollisionAttack : MonoBehaviour
     private bool startAttack;
 
     public Transform ship;
+
+    public Transform pointShoot;
+
+    public Rigidbody2D rbShoot;
+
+    public Rigidbody2D prefabCannonBall;
     void Start()
     {
         enemyMovement = GetComponentInParent<EnemyMovement>();
@@ -48,9 +54,9 @@ public class EnemyCollisionAttack : MonoBehaviour
     IEnumerator Attack()
     {
         isShooting = true;
-        Vector3 shootDirection = (enemyMovement.pointShoot.position - ship.position).normalized;
-        enemyMovement.rbShoot = Instantiate(enemyMovement.prefabCannonBall, enemyMovement.pointShoot.position, ship.rotation);
-        enemyMovement.rbShoot.AddForce(shootDirection * enemyMovement.enemy.ShootForce, ForceMode2D.Impulse);
+        Vector3 shootDirection = (pointShoot.position - ship.position).normalized;
+        rbShoot = Instantiate(prefabCannonBall, pointShoot.position, ship.rotation);
+        rbShoot.AddForce(shootDirection * enemyMovement.enemy.ShootForce, ForceMode2D.Impulse);
         yield return new WaitForSeconds(1f);
         isShooting = false;
     }
