@@ -5,7 +5,11 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public Rigidbody2D prefabCannonBall;
+    //public Transform prefabCannonBall;
     public Transform pointShoot;
+
+    [SerializeField]
+    private float shootForce;
 
     void Start()
     {
@@ -22,9 +26,10 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Rigidbody2D rb = Instantiate(prefabCannonBall, pointShoot.position, Quaternion.identity);
-            rb.velocity = new Vector2(5, 5);
-
+            Vector3 shootDirection = (pointShoot.position - transform.position).normalized;
+            Rigidbody2D rbCannonBall = Instantiate(prefabCannonBall, pointShoot.position, Quaternion.identity);
+            rbCannonBall.AddForce(shootDirection  * shootForce,ForceMode2D.Impulse);
+        
         }
     }
 }
