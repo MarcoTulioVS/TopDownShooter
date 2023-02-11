@@ -19,6 +19,8 @@ public class EnemyMovement : MonoBehaviour
     private void Start()
     {
         enemy.Speed = enemy.AuxSpeed;
+
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
     void Update()
     {

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a0da2a8ff79334688ecc9b785fa146, type: 3}
   m_Name: Enemy1
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 5
   life: 100
   auxSpeed: 5
   minimumDistance: 8
-  rotationSpeed: 700
+  rotationSpeed: 1000
   shootForce: 20
