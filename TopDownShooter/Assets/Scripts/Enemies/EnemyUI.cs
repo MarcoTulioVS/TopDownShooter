@@ -9,8 +9,13 @@ public class EnemyUI : MonoBehaviour
     public Enemy enemy;
 
     public GameObject explosion;
+
+    public Animator anim;
+    
+   
     void Start()
     {
+        
         enemy.CurrentLife = enemy.Life;
     }
 
@@ -24,10 +29,33 @@ public class EnemyUI : MonoBehaviour
     {
         lifeAmount.fillAmount = enemy.CurrentLife / enemy.Life;
 
-        if(lifeAmount.fillAmount <= 0)
+
+        if (enemy.CurrentLife >= 35 && enemy.CurrentLife < 50)
+        {
+            anim.SetInteger("transition", 1);
+            //AnimationEnemyController.instance.ExecuteAnimation(AnimationStates.HALFLIFE);
+        }
+
+        if (enemy.CurrentLife > 0 && enemy.CurrentLife < 35)
+        {
+            anim.SetInteger("transition", 2);
+            //AnimationEnemyController.instance.ExecuteAnimation(AnimationStates.ENDLIFE);
+        }
+
+        if (enemy.CurrentLife >= 50 && enemy.CurrentLife <= 100)
+        {
+            anim.SetInteger("transition", 0);
+            //AnimationEnemyController.instance.ExecuteAnimation(AnimationStates.NORMAL);
+        }
+
+        
+
+        if (lifeAmount.fillAmount <= 0)
         {
             lifeAmount.fillAmount = 0;
             explosion.SetActive(true);
+            anim.SetInteger("transition", 3);
+            //AnimationEnemyController.instance.ExecuteAnimation(AnimationStates.DEATH);
         }
     }
 }

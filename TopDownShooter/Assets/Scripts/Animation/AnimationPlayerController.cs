@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationController : MonoBehaviour
+public class AnimationPlayerController : MonoBehaviour
 {
-    public static AnimationController instance;
-    public Animator anim;
+    public static AnimationPlayerController instance;
+    private Animator anim;
 
     private void Awake()
     {
         instance = this;
+        anim = GetComponent<Animator>();
     }
     
     public void ExecuteAnimation(AnimationStates animationStates)
