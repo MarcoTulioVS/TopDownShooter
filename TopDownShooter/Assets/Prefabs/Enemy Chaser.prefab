@@ -479,8 +479,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1854573700281917558}
   - component: {fileID: 1854573700281917557}
+  - component: {fileID: 2075473003}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: SpriteC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -551,6 +552,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2075473003
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854573700281917559}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ff6e1a32546e56048abe2712d476fdc5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1854573700945176995
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,3 +698,4 @@ MonoBehaviour:
   lifeAmount: {fileID: 1510953597}
   enemy: {fileID: 11400000, guid: d9faf1a5b257ec44fbe5c6934b4f6483, type: 2}
   explosion: {fileID: 1854573699007355054}
+  anim: {fileID: 2075473003}
