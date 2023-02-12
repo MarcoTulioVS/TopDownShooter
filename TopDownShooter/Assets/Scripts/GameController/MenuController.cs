@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class GameController : MonoBehaviour
+public class MenuController : MonoBehaviour
 {
-    public static GameController instance;
+    public static MenuController instance;
 
     public GameObject configurationScreenPanel;
 
@@ -70,5 +70,6 @@ public class GameController : MonoBehaviour
     public void StartGame(string nameScene)
     {
         SceneManager.LoadScene(nameScene);
+
     }
 }
