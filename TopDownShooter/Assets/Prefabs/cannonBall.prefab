@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 8909207985027967216}
   player: {fileID: 11400000, guid: 2ae09b269df34f544b51e2629da34095, type: 2}
+  enemyShooter: {fileID: 11400000, guid: 5603f29072a2ddb4a8fd53fbca0bb115, type: 2}
 --- !u!1001 &3549580843682363584
 PrefabInstance:
   m_ObjectHideFlags: 0

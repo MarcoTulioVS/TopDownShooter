@@ -12,7 +12,7 @@ public class PlayerUI : MonoBehaviour
     
     void Start()
     {
-        
+        player.Life = player.AuxLife;
     }
 
     

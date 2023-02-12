@@ -7,7 +7,8 @@ public class CannonBallCollision : MonoBehaviour
     public GameObject explosion;
 
     public Player player;
-    
+
+    public Enemy enemyShooter;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -22,7 +23,10 @@ public class CannonBallCollision : MonoBehaviour
             col.GetComponent<EnemyUI>().enemy.CurrentLife -= player.Damage;
         }
 
-
+        if (col.gameObject.tag == "Player")
+        {
+            col.GetComponent<PlayerUI>().player.Life -= enemyShooter.Damage;
+        }
         
     }
 }

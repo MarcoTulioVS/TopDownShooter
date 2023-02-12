@@ -12,6 +12,9 @@ public class Player : ScriptableObject
     private float life;
 
     [SerializeField]
+    private float auxLife;
+
+    [SerializeField]
     private float rotationSpeed;
 
     [SerializeField]
@@ -20,5 +23,6 @@ public class Player : ScriptableObject
     public float Speed { get { return this.speed; } set { this.speed = value; } }
     public float RotationSpeed { get { return this.rotationSpeed; } set { this.rotationSpeed = value; } }
     public float Damage { get { return this.damage; } set { this.damage = value; } }
+    public float AuxLife { get { return this.auxLife; } private set { this.auxLife = value; } }
 
 }

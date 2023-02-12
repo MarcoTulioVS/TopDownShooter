@@ -5,12 +5,14 @@ using UnityEngine;
 public class EnemyExplosion : MonoBehaviour
 {
     public GameObject explosion;
-
+    public Enemy enemy;
+    
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Player")
         {
             explosion.SetActive(true);
+            col.gameObject.GetComponent<PlayerUI>().player.Life -= enemy.Damage;
             Destroy(gameObject, 0.4f);
         }
     }

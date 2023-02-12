@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a0da2a8ff79334688ecc9b785fa146, type: 3}
   m_Name: Enemy2
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 10
   life: 100
   currentLife: 100
-  auxSpeed: 0
+  auxSpeed: 10
   minimumDistance: 8
   rotationSpeed: 1000
   shootForce: 0
-  damage: 20
+  damage: 30
