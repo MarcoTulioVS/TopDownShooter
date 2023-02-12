@@ -8,9 +8,20 @@ public class GameController : MonoBehaviour
 
     private float timeCount;
 
+    public GameObject finalScreen;
+
+    public Player player;
+
+    public static GameController instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
+        Time.timeScale = 1;
         timeCount = MenuController.instance.config.TimeMatch * 60;
     }
 
@@ -24,16 +35,21 @@ public class GameController : MonoBehaviour
     private void StartTimeCount()
     {
         timeCount -= Time.deltaTime;
+
+        if(timeCount <= 0)
+        {
+            GameOver();
+        }
+
         CountTimeText.text = timeCount.ToString();
     }
 
-    private void GameOver()
+    public void GameOver()
     {
-        if (timeCount <= 0)
-        {
-            //Exibe tela final
-        }
+       Time.timeScale = 0;
+       finalScreen.SetActive(true);
+        
     }
 
-
+    
 }

@@ -3070,6 +3070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CountTimeText: {fileID: 127602397}
+  finalScreen: {fileID: 804242599}
 --- !u!4 &516785404
 Transform:
   m_ObjectHideFlags: 0

@@ -45,9 +45,16 @@ public class PlayerUI : MonoBehaviour
         if (lifeAmount.fillAmount <= 0)
         {
             lifeAmount.fillAmount = 0;
-            explosion.SetActive(true);
-            AnimationPlayerController.instance.ExecuteAnimation(AnimationStates.DEATH);
-            //Chama game over
+            StartCoroutine("WaitForExplosion");
+            
         }
+    }
+
+    IEnumerator WaitForExplosion()
+    {
+        explosion.SetActive(true);
+        AnimationPlayerController.instance.ExecuteAnimation(AnimationStates.DEATH);
+        yield return new WaitForSeconds(1f);
+        GameController.instance.GameOver();
     }
 }

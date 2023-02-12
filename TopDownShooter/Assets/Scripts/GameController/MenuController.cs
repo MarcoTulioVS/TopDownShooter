@@ -72,4 +72,5 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene(nameScene);
 
     }
+    
 }
