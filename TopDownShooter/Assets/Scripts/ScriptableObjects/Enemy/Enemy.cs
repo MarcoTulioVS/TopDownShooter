@@ -26,6 +26,9 @@ public class Enemy : ScriptableObject
     [SerializeField]
     private float shootForce;
 
+    [SerializeField]
+    private float damage;
+
     public float Speed { get { return this.speed; } set { this.speed = value; } }
     public float AuxSpeed { get { return this.auxSpeed; } private set { this.auxSpeed = value; } }
     public float Life { get { return this.life; } private set { this.life = value; } }
@@ -33,6 +36,7 @@ public class Enemy : ScriptableObject
     public float RotationSpeed { get { return this.rotationSpeed; } set { this.rotationSpeed = value; } }
     public float ShootForce { get { return this.shootForce; } set { this.shootForce = value; } }
     public float CurrentLife { get { return this.currentLife; } set { this.currentLife = value; } }
+    public float Damage { get { return this.damage; } set { this.damage = value; } }
 
     
 

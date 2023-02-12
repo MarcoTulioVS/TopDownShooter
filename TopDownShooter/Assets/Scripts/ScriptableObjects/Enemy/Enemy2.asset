@@ -19,3 +19,4 @@ MonoBehaviour:
   minimumDistance: 8
   rotationSpeed: 1000
   shootForce: 0
+  damage: 20

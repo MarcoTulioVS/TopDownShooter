@@ -17,9 +17,11 @@ public class EnemyMovement : MonoBehaviour
     }
     void Update()
     {
-
-        Movement();
-        Rotation();
+        if (enemy.CurrentLife > 0)
+        {
+            Movement();
+            Rotation();
+        }
         //float distance = Vector3.Distance(target.position, transform.position);
 
         //if (distance <= enemy.MinimumDistance && !isShooting)

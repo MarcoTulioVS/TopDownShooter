@@ -10,8 +10,6 @@ public class GameController : MonoBehaviour
 
     public GameObject finalScreen;
 
-    public Player player;
-
     public static GameController instance;
 
     private void Awake()

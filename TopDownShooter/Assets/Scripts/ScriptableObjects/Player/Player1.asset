@@ -15,3 +15,4 @@ MonoBehaviour:
   speed: 15
   life: 100
   rotationSpeed: 500
+  damage: 30
