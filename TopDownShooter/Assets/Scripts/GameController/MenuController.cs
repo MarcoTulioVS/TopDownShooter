@@ -67,7 +67,7 @@ public class MenuController : MonoBehaviour
         
     }
 
-    public void StartGame(string nameScene)
+    public void GoToScene(string nameScene)
     {
         SceneManager.LoadScene(nameScene);
 
