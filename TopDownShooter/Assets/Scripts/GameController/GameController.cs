@@ -12,6 +12,9 @@ public class GameController : MonoBehaviour
 
     public static GameController instance;
 
+    public Text score;
+
+    public float scoreValue;
     private void Awake()
     {
         instance = this;
@@ -19,6 +22,8 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        scoreValue = 0;
+        score.text = "0";
         Time.timeScale = 1;
         timeCount = MenuController.instance.config.TimeMatch * 60;
     }
@@ -27,7 +32,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         StartTimeCount();
-        
+        UpdateScore();
     }
 
     private void StartTimeCount()
@@ -49,5 +54,10 @@ public class GameController : MonoBehaviour
         
     }
 
-    
+
+    private void UpdateScore()
+    {
+        score.text = scoreValue.ToString();
+    }
+
 }

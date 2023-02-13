@@ -11,8 +11,7 @@ public class EnemyUI : MonoBehaviour
     public GameObject explosion;
 
     public Animator anim;
-    
-   
+
     void Start()
     {
         
@@ -22,7 +21,10 @@ public class EnemyUI : MonoBehaviour
     
     void Update()
     {
+        
         UpdateLife();
+
+       
     }
 
     private void UpdateLife()
@@ -33,29 +35,31 @@ public class EnemyUI : MonoBehaviour
         if (enemy.CurrentLife >= 35 && enemy.CurrentLife < 50)
         {
             anim.SetInteger("transition", 1);
-            //AnimationEnemyController.instance.ExecuteAnimation(AnimationStates.HALFLIFE);
+            
         }
 
         if (enemy.CurrentLife > 0 && enemy.CurrentLife < 35)
         {
             anim.SetInteger("transition", 2);
-            //AnimationEnemyController.instance.ExecuteAnimation(AnimationStates.ENDLIFE);
+            
         }
 
         if (enemy.CurrentLife >= 50 && enemy.CurrentLife <= 100)
         {
             anim.SetInteger("transition", 0);
-            //AnimationEnemyController.instance.ExecuteAnimation(AnimationStates.NORMAL);
+            
         }
 
         
 
         if (lifeAmount.fillAmount <= 0)
         {
+            
             lifeAmount.fillAmount = 0;
             explosion.SetActive(true);
             anim.SetInteger("transition", 3);
-            //AnimationEnemyController.instance.ExecuteAnimation(AnimationStates.DEATH);
+            Destroy(gameObject, 0.4f);
+
         }
     }
 }

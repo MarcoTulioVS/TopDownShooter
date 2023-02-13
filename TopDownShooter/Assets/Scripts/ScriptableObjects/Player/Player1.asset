@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Player1
   m_EditorClassIdentifier: 
   speed: 15
-  life: 100
+  life: 70
+  auxLife: 100
   rotationSpeed: 500
   damage: 30

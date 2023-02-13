@@ -21,6 +21,11 @@ public class CannonBallCollision : MonoBehaviour
         if (col.gameObject.tag=="enemy") 
         {
             col.GetComponent<EnemyUI>().enemy.CurrentLife -= player.Damage;
+
+            if(col.GetComponent<EnemyUI>().enemy.CurrentLife <= 0)
+            {
+                GameController.instance.scoreValue += 10;
+            }
         }
 
         if (col.gameObject.tag == "Player")
