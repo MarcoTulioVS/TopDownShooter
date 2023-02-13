@@ -12,24 +12,26 @@ public class EnemyUI : MonoBehaviour
 
     public Animator anim;
 
+    private float life;
+
+    public float Life { get { return this.life; } set { this.life = value; } }
     void Start()
     {
         
         enemy.CurrentLife = enemy.Life;
+        life = enemy.CurrentLife;
     }
 
     
     void Update()
     {
-        
         UpdateLife();
-
        
     }
 
     private void UpdateLife()
     {
-        lifeAmount.fillAmount = enemy.CurrentLife / enemy.Life;
+        lifeAmount.fillAmount = life / enemy.Life;
 
 
         if (enemy.CurrentLife >= 35 && enemy.CurrentLife < 50)

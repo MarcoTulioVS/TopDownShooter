@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     public Text score;
 
     public float scoreValue;
+
+    public Text finalScore;
     private void Awake()
     {
         instance = this;
@@ -50,6 +52,7 @@ public class GameController : MonoBehaviour
     public void GameOver()
     {
        Time.timeScale = 0;
+       finalScore.text = score.text;
        finalScreen.SetActive(true);
         
     }
