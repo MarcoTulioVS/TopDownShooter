@@ -11,6 +11,11 @@ public class CannonBallCollision : MonoBehaviour
     public Enemy enemyShooter;
 
     private bool damageApplied;
+
+    private void Update()
+    {
+        DestroyObject();
+    }
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag != null && col.gameObject.tag!="area")
@@ -44,5 +49,10 @@ public class CannonBallCollision : MonoBehaviour
         {
             damageApplied = false;
         }
+    }
+
+    private void DestroyObject()
+    {
+        Destroy(gameObject, 3f);
     }
 }
