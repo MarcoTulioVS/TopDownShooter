@@ -45,8 +45,10 @@ public class EnemyMovement : MonoBehaviour
 
     private void Rotation()
     {
-        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, target.position);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, enemy.RotationSpeed * Time.deltaTime);
+        Vector2 direction = target.position - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(Vector3.forward,direction);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation,rotation,enemy.RotationSpeed * Time.deltaTime);
+
     }
 
 
