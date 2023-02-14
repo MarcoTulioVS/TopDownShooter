@@ -18,9 +18,6 @@ public class Enemy : ScriptableObject
     private float auxSpeed;
 
     [SerializeField]
-    private float minimumDistance;
-
-    [SerializeField]
     private float rotationSpeed;
 
     [SerializeField]
@@ -33,7 +30,6 @@ public class Enemy : ScriptableObject
     public float Speed { get { return this.speed; } set { this.speed = value; } }
     public float AuxSpeed { get { return this.auxSpeed; } private set { this.auxSpeed = value; } }
     public float Life { get { return this.life; } private set { this.life = value; } }
-    public float MinimumDistance { get { return this.minimumDistance; } set { this.minimumDistance = value; } }
     public float RotationSpeed { get { return this.rotationSpeed; } set { this.rotationSpeed = value; } }
     public float ShootForce { get { return this.shootForce; } set { this.shootForce = value; } }
     public float CurrentLife { get { return this.currentLife; } set { this.currentLife = value; } }
