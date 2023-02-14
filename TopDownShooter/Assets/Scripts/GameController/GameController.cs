@@ -17,6 +17,11 @@ public class GameController : MonoBehaviour
     public float scoreValue;
 
     public Text finalScore;
+
+    public GameObject screenPause;
+
+    private bool activeScreenPause;
+
     private void Awake()
     {
         instance = this;
@@ -35,6 +40,7 @@ public class GameController : MonoBehaviour
     {
         StartTimeCount();
         UpdateScore();
+        PauseGame();
     }
 
     private void StartTimeCount()
@@ -63,4 +69,27 @@ public class GameController : MonoBehaviour
         score.text = scoreValue.ToString();
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    private void PauseGame()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            activeScreenPause = !activeScreenPause;
+            screenPause.SetActive(activeScreenPause);
+
+            if (activeScreenPause)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
+        }
+        
+    }
 }
