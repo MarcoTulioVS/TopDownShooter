@@ -17,6 +17,13 @@ public class PlayerAttack : MonoBehaviour
 
     private bool activeTrippleShot;
 
+    [SerializeField]
+    private float fireRate;
+
+    private float nextFire = 0;
+
+    [SerializeField]
+    private List<Vector2> shootsDirection = new List<Vector2>();
 
     void Start()
     {
@@ -37,21 +44,25 @@ public class PlayerAttack : MonoBehaviour
         }
 
         //Triple Attack Right
-        TrippleAttack(pointsShoot[0],true);
-        TrippleAttack(pointsShoot[1],true);
-        TrippleAttack(pointsShoot[2],true);
+        //TrippleAttack(pointsShoot[0], true);
+        //TrippleAttack(pointsShoot[1], true);
+        //TrippleAttack(pointsShoot[2], true);
 
         //Triple Attack Left
-        TrippleAttack(pointsShoot[3],false);
-        TrippleAttack(pointsShoot[4],false);
-        TrippleAttack(pointsShoot[5],false);
+        //TrippleAttack(pointsShoot[3], false);
+        //TrippleAttack(pointsShoot[4], false);
+        //TrippleAttack(pointsShoot[5], false);
+
+        TrippleAttack();
+
     }
 
 
     private void Attack()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.time>nextFire)
         {
+            nextFire = Time.time + fireRate;
             Vector3 shootDirection = (pointShoot.position - transform.position).normalized;
             rbCannonBall = Instantiate(prefabCannonBall, pointShoot.position, Quaternion.identity);
             rbCannonBall.AddForce(shootDirection  * shootForce,ForceMode2D.Impulse);
@@ -60,32 +71,78 @@ public class PlayerAttack : MonoBehaviour
     }
 
 
-    private void TrippleAttack(Transform trShoot,bool isRight)
+    private void TrippleAttack()
     {
-
-        if (isRight)
+        if(Input.GetMouseButtonDown(1) && activeTrippleShot)
         {
-            if (Input.GetMouseButtonDown(1) && activeTrippleShot)
-            {
-                TrippleShoot(trShoot);
-            }
+            TrippShootRight(pointsShoot[3], pointsShoot[4], pointsShoot[5]);
         }
-        else
+
+        if (Input.GetMouseButtonDown(0) && activeTrippleShot)
         {
-            if (Input.GetMouseButtonDown(0) && activeTrippleShot)
-            {
-                TrippleShoot(trShoot);
-            }
+            TrippShootLeft(pointsShoot[0], pointsShoot[1], pointsShoot[2]);
         }
 
     }
 
 
-    private void TrippleShoot(Transform trShoot)
+    //private void TrippleShoot(Transform trShoot,float fireRate)
+    //{
+        
+    //    if (Time.time > nextFire)
+    //    {
+    //        nextFire = Time.time + fireRate;
+    //        Vector3 shoot = (trShoot.position - transform.position).normalized;
+    //        rbCannonBall = Instantiate(prefabCannonBall, trShoot.position, Quaternion.identity);
+    //        rbCannonBall.AddForce(shoot * shootForce, ForceMode2D.Impulse);
+    //    }
+        
+    //}
+
+    private void TrippShootLeft(Transform tr1,Transform tr2, Transform tr3)
     {
-        Vector3 shoot = (trShoot.position - transform.position).normalized;
-        rbCannonBall = Instantiate(prefabCannonBall, trShoot.position, Quaternion.identity);
-        rbCannonBall.AddForce(shoot * shootForce, ForceMode2D.Impulse);
+        if (Time.time > nextFire)
+        {
+            nextFire= Time.time + fireRate;
+
+            shootsDirection[0] = (tr1.position - transform.position).normalized;
+            shootsDirection[1] = (tr2.position - transform.position).normalized;
+            shootsDirection[2] = (tr3.position - transform.position).normalized;
+
+
+            for(int i = 0; i < pointsShoot.Count - 3; i++)
+            {
+                rbCannonBall = Instantiate(prefabCannonBall, pointsShoot[i].position, Quaternion.identity);
+                rbCannonBall.AddForce(shootsDirection[i] * shootForce, ForceMode2D.Impulse);
+            }
+            
+        }
+
+    }
+
+    private void TrippShootRight(Transform tr1, Transform tr2, Transform tr3)
+    {
+        if (Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+
+            shootsDirection[3] = (tr1.position - transform.position).normalized;
+            shootsDirection[4] = (tr2.position - transform.position).normalized;
+            shootsDirection[5] = (tr3.position - transform.position).normalized;
+
+
+            for (int i = 3; i < pointsShoot.Count; i++)
+            {
+                rbCannonBall = Instantiate(prefabCannonBall, pointsShoot[i].position, Quaternion.identity);
+                rbCannonBall.AddForce(shootsDirection[i] * shootForce, ForceMode2D.Impulse);
+            }
+
+        }
+
     }
 
 }
+
+   
+
+

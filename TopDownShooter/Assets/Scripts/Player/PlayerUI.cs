@@ -13,6 +13,8 @@ public class PlayerUI : MonoBehaviour
     void Start()
     {
         player.Life = player.AuxLife;
+        player.Speed = player.AuxSpeed;
+        
     }
 
     
@@ -45,6 +47,7 @@ public class PlayerUI : MonoBehaviour
         if (lifeAmount.fillAmount <= 0)
         {
             lifeAmount.fillAmount = 0;
+            player.Speed = 0;
             StartCoroutine("WaitForExplosion");
             
         }
