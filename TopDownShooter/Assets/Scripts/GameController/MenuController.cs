@@ -17,6 +17,9 @@ public class MenuController : MonoBehaviour
 
     [Header("ERROR HANDLER MESSAGE")]
     public GameObject erroMessagePanel;
+
+
+    public GameObject exitScreen;
     private void Awake()
     {
         instance = this;
@@ -74,5 +77,25 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene(nameScene);
 
     }
-    
+
+    public void QuitGame(int value)
+    {
+        if (value == 1)
+        {
+            Application.Quit();
+        }
+        else
+        {
+            exitScreen.SetActive(false);
+        }
+        
+    }
+
+    public void ShowQuitScreen()
+    {
+        exitScreen.SetActive(true);
+    }
+
+
+
 }
