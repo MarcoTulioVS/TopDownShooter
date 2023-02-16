@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class CannonBallCollision : MonoBehaviour
 {
+    [Header("OBJECT EXPLOSION")]
     public GameObject explosion;
 
+    [Header("PLAYER CONFIGURATION REFERENCE")]
     public Player player;
 
+    [Header("ENEMY SHOOTER CONFIGURATION REFERENCE")]
     public Enemy enemyShooter;
 
     private bool damageApplied;
@@ -18,13 +21,13 @@ public class CannonBallCollision : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag != null && col.gameObject.tag!="area")
+        if (col.gameObject.tag!="area" && gameObject.tag!="ballEnemy")
         {
             explosion.SetActive(true);
             Destroy(gameObject,0.260f);
         }
 
-        if (col.gameObject.tag=="enemy") 
+        if (col.gameObject.tag=="enemy" && gameObject.tag!="ballEnemy") 
         {
             col.GetComponent<EnemyUI>().Life -= player.Damage;
 
@@ -35,6 +38,12 @@ public class CannonBallCollision : MonoBehaviour
                 GameController.instance.scoreValue += 10;
                 SpawnEnemy.instance.quantEnemy--;
             }
+        }
+
+        if(col.gameObject.tag == "Player" && gameObject.tag=="ballEnemy")
+        {
+            explosion.SetActive(true);
+            Destroy(gameObject, 0.260f);
         }
 
         if (col.gameObject.tag == "Player")
