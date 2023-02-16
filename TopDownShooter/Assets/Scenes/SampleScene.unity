@@ -21640,6 +21640,7 @@ MonoBehaviour:
   gameTime: {fileID: 0}
   gameSpawnTime: {fileID: 0}
   erroMessagePanel: {fileID: 0}
+  exitScreen: {fileID: 0}
 --- !u!4 &1618550461
 Transform:
   m_ObjectHideFlags: 0
