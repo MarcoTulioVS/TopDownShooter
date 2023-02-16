@@ -6,6 +6,19 @@ public class SpawnEnemy : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public ConfigurationsGame gameConfig;
+
+    [SerializeField]
+    private int maxSpawn;
+
+    
+    public int quantEnemy;
+
+    public static SpawnEnemy instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         StartCoroutine("StartSpawn");
@@ -13,7 +26,11 @@ public class SpawnEnemy : MonoBehaviour
 
     private void Spawn()
     {
-        Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+        if (quantEnemy<maxSpawn)
+        {
+            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            quantEnemy++;
+        }
     }
 
     IEnumerator StartSpawn()

@@ -33,6 +33,7 @@ public class CannonBallCollision : MonoBehaviour
                 damageApplied = true;
                 col.GetComponent<Collider2D>().enabled = false;
                 GameController.instance.scoreValue += 10;
+                SpawnEnemy.instance.quantEnemy--;
             }
         }
 
