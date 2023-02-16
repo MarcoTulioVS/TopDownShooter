@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ConfigGame
   m_EditorClassIdentifier: 
   timeMatch: 3
-  timeSpawnEnemy: 5
+  timeSpawnEnemy: 10

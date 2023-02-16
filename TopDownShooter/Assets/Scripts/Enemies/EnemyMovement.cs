@@ -8,7 +8,6 @@ public class EnemyMovement : MonoBehaviour
 
     public Transform target;
 
-    
     private void Start()
     {
         enemy.Speed = enemy.AuxSpeed;
@@ -21,19 +20,8 @@ public class EnemyMovement : MonoBehaviour
         {
             Movement();
             Rotation();
+            
         }
-        //float distance = Vector3.Distance(target.position, transform.position);
-
-        //if (distance <= enemy.MinimumDistance && !isShooting)
-        //{
-        //    enemy.Speed = 0;
-        //    StartCoroutine("Attack");
-        //}
-        //else
-        //{
-        //    enemy.Speed = enemy.AuxSpeed;
-        //}
-
         
     }
 
@@ -51,5 +39,6 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
+    
 
 }

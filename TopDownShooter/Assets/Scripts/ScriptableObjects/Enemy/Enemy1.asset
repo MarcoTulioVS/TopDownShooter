@@ -16,7 +16,6 @@ MonoBehaviour:
   life: 100
   currentLife: 100
   auxSpeed: 2
-  minimumDistance: 8
-  rotationSpeed: 1000
-  shootForce: 20
+  rotationSpeed: 100
+  shootForce: 3
   damage: 15

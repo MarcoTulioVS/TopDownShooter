@@ -585,7 +585,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.22408676, y: 0.08821672}
+  m_Offset: {x: 0.22408676, y: -0.49857557}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -596,7 +596,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.07640648, y: 2.9206748}
+  m_Size: {x: 0.07640648, y: 1.7470901}
   m_EdgeRadius: 0
 --- !u!114 &6923671963141813552
 MonoBehaviour:
@@ -647,6 +647,7 @@ GameObject:
   - component: {fileID: 6923671963190019006}
   - component: {fileID: 6923671963190019004}
   - component: {fileID: 1308557101430008992}
+  - component: {fileID: -7308512990576062617}
   m_Layer: 0
   m_Name: Enemy Shooter
   m_TagString: enemy
@@ -663,7 +664,7 @@ Transform:
   m_GameObject: {fileID: 6923671963190019001}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 17.1, y: -10.3, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6923671963597080801}
   - {fileID: 6923671962879904267}
@@ -730,6 +731,27 @@ MonoBehaviour:
   enemy: {fileID: 11400000, guid: 5603f29072a2ddb4a8fd53fbca0bb115, type: 2}
   explosion: {fileID: 5395727476098820807}
   anim: {fileID: 1032152962}
+--- !u!50 &-7308512990576062617
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6923671963190019001}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &6923671963206549410
 GameObject:
   m_ObjectHideFlags: 0
