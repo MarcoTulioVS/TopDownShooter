@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    [Header("CANNON BALL")]
     public Rigidbody2D prefabCannonBall;
     
+    [Header("PROJECTILE POINT REFERENCE")]
     public Transform pointShoot;
 
     [SerializeField]
@@ -43,16 +45,6 @@ public class PlayerAttack : MonoBehaviour
             Attack();
         }
 
-        //Triple Attack Right
-        //TrippleAttack(pointsShoot[0], true);
-        //TrippleAttack(pointsShoot[1], true);
-        //TrippleAttack(pointsShoot[2], true);
-
-        //Triple Attack Left
-        //TrippleAttack(pointsShoot[3], false);
-        //TrippleAttack(pointsShoot[4], false);
-        //TrippleAttack(pointsShoot[5], false);
-
         TrippleAttack();
 
     }
@@ -85,19 +77,6 @@ public class PlayerAttack : MonoBehaviour
 
     }
 
-
-    //private void TrippleShoot(Transform trShoot,float fireRate)
-    //{
-        
-    //    if (Time.time > nextFire)
-    //    {
-    //        nextFire = Time.time + fireRate;
-    //        Vector3 shoot = (trShoot.position - transform.position).normalized;
-    //        rbCannonBall = Instantiate(prefabCannonBall, trShoot.position, Quaternion.identity);
-    //        rbCannonBall.AddForce(shoot * shootForce, ForceMode2D.Impulse);
-    //    }
-        
-    //}
 
     private void TrippShootLeft(Transform tr1,Transform tr2, Transform tr3)
     {

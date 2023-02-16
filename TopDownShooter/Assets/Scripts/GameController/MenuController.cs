@@ -6,14 +6,16 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     public static MenuController instance;
-
+    
+    [Header("CONFIGURATION")]
     public GameObject configurationScreenPanel;
-
     public ConfigurationsGame config;
 
+    [Header("INPUTS TO CONFIGURE THE GAME")]
     public InputField gameTime;
     public InputField gameSpawnTime;
 
+    [Header("ERROR HANDLER MESSAGE")]
     public GameObject erroMessagePanel;
     private void Awake()
     {

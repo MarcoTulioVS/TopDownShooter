@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
+    [Header("ENEMY OBJECT REFERENCE")]
     public GameObject enemyPrefab;
+
+    [Header("GAME CONFIGURATION")]
     public ConfigurationsGame gameConfig;
 
     [SerializeField]
     private int maxSpawn;
 
-    
     public int quantEnemy;
 
     public static SpawnEnemy instance;

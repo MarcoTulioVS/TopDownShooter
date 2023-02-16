@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    [Header("ENEMY CONFIGURATION REFERENCE")]
     public Enemy enemy;
 
+    [HideInInspector]
     public Transform target;
 
     private void Start()

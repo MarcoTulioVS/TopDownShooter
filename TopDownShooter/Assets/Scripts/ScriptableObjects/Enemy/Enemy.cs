@@ -26,7 +26,6 @@ public class Enemy : ScriptableObject
     [SerializeField]
     private float damage;
 
-    
     public float Speed { get { return this.speed; } set { this.speed = value; } }
     public float AuxSpeed { get { return this.auxSpeed; } private set { this.auxSpeed = value; } }
     public float Life { get { return this.life; } private set { this.life = value; } }

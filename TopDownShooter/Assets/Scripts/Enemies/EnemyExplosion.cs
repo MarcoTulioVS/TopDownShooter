@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class EnemyExplosion : MonoBehaviour
 {
+    [Header("OBJECT EXPLOSION")]
     public GameObject explosion;
+
+    [Header("ENEMY CONFIGURATION REFERENCE")]
     public Enemy enemy;
     
     private void OnCollisionEnter2D(Collision2D col)

@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerUI : MonoBehaviour
 {
+    [Header("LIFE")]
     public Image lifeAmount;
+
+    [Header("PLAYER CONFIGURATION")]
     public Player player;
 
+    [Header("OBJECT EXPLOSION")]
     public GameObject explosion;
 
     

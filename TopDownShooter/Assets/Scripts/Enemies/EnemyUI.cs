@@ -4,12 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 public class EnemyUI : MonoBehaviour
 {
+    [Header("CONTROL LIFE BAR")]
     public Image lifeAmount;
 
+    [Header("ENEMY CONFIGURATION REFERENCE")]
     public Enemy enemy;
 
+    [Header("OBJECT EXPLOSION")]
     public GameObject explosion;
 
+    [Header("ANIMATION")]
     public Animator anim;
 
     private float life;

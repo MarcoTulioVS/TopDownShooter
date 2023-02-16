@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-   
+    
     public Player player;
 
     private float movementHor;

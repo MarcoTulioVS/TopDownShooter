@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CannonBeach : MonoBehaviour
 {
+    [Header("CANNON BALL")]
     public Rigidbody2D prefabCannonBall;
+    public Transform point;
 
     [SerializeField]
     private float speed;
-
-    public Transform point;
 
     [SerializeField]
     private bool isUp;

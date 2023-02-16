@@ -4,20 +4,24 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
+    [Header("TIME COUNT")]
     public Text CountTimeText;
 
     private float timeCount;
 
+    [Header("FINAL SCREEN")]
     public GameObject finalScreen;
 
     public static GameController instance;
 
+    [Header("SCORE")]
     public Text score;
 
     public float scoreValue;
 
     public Text finalScore;
 
+    [Header("PAUSE")]
     public GameObject screenPause;
 
     private bool activeScreenPause;

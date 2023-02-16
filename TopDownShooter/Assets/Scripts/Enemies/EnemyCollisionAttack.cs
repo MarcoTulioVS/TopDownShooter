@@ -10,16 +10,21 @@ public class EnemyCollisionAttack : MonoBehaviour
 
     private bool startAttack;
 
+    [Header("SHIP")]
     public Transform ship;
 
+    [Header("REFERENCE POINT TO THE SHOOT")]
     public Transform pointShoot;
 
     public Rigidbody2D rbShoot;
 
+    [Header("PROJECTILE")]
     public Rigidbody2D prefabCannonBall;
+
     void Start()
     {
         enemyMovement = GetComponentInParent<EnemyMovement>();
+
     }
 
     

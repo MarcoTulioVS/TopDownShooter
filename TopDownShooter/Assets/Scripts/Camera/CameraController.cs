@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    
+    [Header("X")]
+    [Header("CAMERA MAXIMUM AND MINIMUM VALUES")]
+
     [SerializeField]
     private float maxX;
 
     [SerializeField]
     private float minX;
+
+    [Header("Y")]
 
     [SerializeField]
     private float maxY;
@@ -16,6 +22,7 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private float minY;
 
+    [Header("TAGERT TO FOLLOW")]
     public Transform target;
     void Start()
     {

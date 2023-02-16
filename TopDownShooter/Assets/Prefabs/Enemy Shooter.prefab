@@ -585,7 +585,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.22408676, y: -0.49857557}
+  m_Offset: {x: 0.23248672, y: -0.2801782}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -596,7 +596,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.07640648, y: 1.7470901}
+  m_Size: {x: 0.26120377, y: 2.1838849}
   m_EdgeRadius: 0
 --- !u!114 &6923671963141813552
 MonoBehaviour:
@@ -613,7 +613,7 @@ MonoBehaviour:
   ship: {fileID: 6923671963190019007}
   pointShoot: {fileID: 6923671962879904267}
   rbShoot: {fileID: 0}
-  prefabCannonBall: {fileID: 1987575692475023265, guid: 043fc53773433484a993c2786b77c33e, type: 3}
+  prefabCannonBall: {fileID: 613737224867680724, guid: 01e52d2b4eadd0649bb7536ce3cb34e2, type: 3}
 --- !u!50 &6923671963141813553
 Rigidbody2D:
   serializedVersion: 4
