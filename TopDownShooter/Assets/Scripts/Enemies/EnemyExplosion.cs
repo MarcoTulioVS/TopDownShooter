@@ -16,6 +16,7 @@ public class EnemyExplosion : MonoBehaviour
         {
             explosion.SetActive(true);
             col.gameObject.GetComponent<PlayerUI>().player.Life -= enemy.Damage;
+            SpawnEnemy.instance.quantEnemy--;
             Destroy(gameObject, 0.4f);
         }
     }

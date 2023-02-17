@@ -622,7 +622,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6923671963141813549}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -730,7 +730,6 @@ MonoBehaviour:
   lifeAmount: {fileID: 1530833635}
   enemy: {fileID: 11400000, guid: 5603f29072a2ddb4a8fd53fbca0bb115, type: 2}
   explosion: {fileID: 5395727476098820807}
-  anim: {fileID: 1032152962}
 --- !u!50 &-7308512990576062617
 Rigidbody2D:
   serializedVersion: 4
@@ -739,7 +738,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6923671963190019001}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
