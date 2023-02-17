@@ -9,7 +9,6 @@ public class EnemyMovement : MonoBehaviour
 
     [HideInInspector]
     public Transform target;
-
     private void Start()
     {
         enemy.Speed = enemy.AuxSpeed;
@@ -24,7 +23,6 @@ public class EnemyMovement : MonoBehaviour
             Rotation();
             
         }
-        
     }
 
     private void Movement()
@@ -40,7 +38,5 @@ public class EnemyMovement : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation,rotation,enemy.RotationSpeed * Time.deltaTime);
 
     }
-
     
-
 }

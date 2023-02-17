@@ -26,6 +26,15 @@ public class GameController : MonoBehaviour
 
     private bool activeScreenPause;
 
+    public GameObject tutorialMove;
+    public GameObject tutorialPause;
+    public GameObject tutorialShoot;
+    public GameObject background;
+
+    [SerializeField]
+    private bool resume;
+
+    private bool stopTutorial;
     private void Awake()
     {
         instance = this;
@@ -37,6 +46,7 @@ public class GameController : MonoBehaviour
         score.text = "0";
         Time.timeScale = 1;
         timeCount = MenuController.instance.config.TimeMatch * 60;
+        
     }
 
     
@@ -45,6 +55,9 @@ public class GameController : MonoBehaviour
         StartTimeCount();
         UpdateScore();
         PauseGame();
+        ResumeGame();
+
+        StartCoroutine("TutorialMove");
     }
 
     private void StartTimeCount()
@@ -95,5 +108,60 @@ public class GameController : MonoBehaviour
             }
         }
         
+    }
+
+    IEnumerator TutorialMove()
+    {
+        if (!stopTutorial)
+        {
+            if (resume)
+            {
+                Time.timeScale = 1;
+                tutorialMove.SetActive(false);
+                background.SetActive(false);
+                stopTutorial = true;
+                resume = false;
+                StopCoroutine("TutorialMove");
+            }
+            else
+            {
+
+                yield return new WaitForSeconds(3);
+                background.SetActive(true);
+                tutorialMove.SetActive(true);
+                Time.timeScale = 0;
+
+            }
+        }
+        
+    }
+
+    public IEnumerator TutorialShoot()
+    {
+        
+        if (resume)
+        {
+            Time.timeScale = 1;
+            
+            tutorialShoot.SetActive(false);
+            background.SetActive(false);
+            yield return new WaitForSeconds(1);
+            StopCoroutine("TutorialShoot");
+        }
+        else
+        {
+            Time.timeScale = 0;
+            tutorialShoot.SetActive(true);
+            background.SetActive(true);
+
+        }
+    }
+
+    private void ResumeGame()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            resume = true;
+        }
     }
 }
