@@ -214,6 +214,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6858431443732405107, guid: 0c97bf08080be5048a5efdd815894923, type: 3}
+      propertyPath: maxSpawn
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858431443732405107, guid: 0c97bf08080be5048a5efdd815894923, type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 1854573700945176995, guid: 7c403ae7f3aefb94fa44a9dc94c89bfc, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c97bf08080be5048a5efdd815894923, type: 3}
 --- !u!1 &31118033
@@ -692,6 +700,10 @@ PrefabInstance:
     - target: {fileID: 6858431443732405106, guid: 0c97bf08080be5048a5efdd815894923, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858431443732405107, guid: 0c97bf08080be5048a5efdd815894923, type: 3}
+      propertyPath: maxSpawn
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c97bf08080be5048a5efdd815894923, type: 3}
@@ -2215,7 +2227,7 @@ MonoBehaviour:
   - {fileID: 1991162870}
   - {fileID: 229841865}
   - {fileID: 1756557902}
-  fireRate: 1
+  fireRate: 0.5
   shootsDirection:
   - {x: 0, y: 0}
   - {x: 0, y: 0}

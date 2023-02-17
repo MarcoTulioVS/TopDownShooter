@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   auxSpeed: 5
-  life: 55
+  life: 100
   auxLife: 100
   rotationSpeed: 350
-  damage: 30
+  damage: 50

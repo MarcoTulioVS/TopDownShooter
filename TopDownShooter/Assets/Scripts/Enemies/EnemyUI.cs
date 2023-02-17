@@ -13,15 +13,15 @@ public class EnemyUI : MonoBehaviour
     [Header("OBJECT EXPLOSION")]
     public GameObject explosion;
 
-    [Header("ANIMATION")]
-    public Animator anim;
+    //[Header("ANIMATION")]
+    private Animator anim;
 
     private float life;
 
     public float Life { get { return this.life; } set { this.life = value; } }
     void Start()
     {
-        
+        anim = GetComponentInChildren<Animator>();
         enemy.CurrentLife = enemy.Life;
         life = enemy.CurrentLife;
     }
@@ -36,34 +36,27 @@ public class EnemyUI : MonoBehaviour
     private void UpdateLife()
     {
         lifeAmount.fillAmount = life / enemy.Life;
-
-
-        if (enemy.CurrentLife >= 35 && enemy.CurrentLife < 50)
-        {
-            anim.SetInteger("transition", 1);
-            
-        }
-
-        if (enemy.CurrentLife > 0 && enemy.CurrentLife < 35)
-        {
-            anim.SetInteger("transition", 2);
-            
-        }
-
-        if (enemy.CurrentLife >= 50 && enemy.CurrentLife <= 100)
+       
+        if (lifeAmount.fillAmount > 0.5f)
         {
             anim.SetInteger("transition", 0);
             
         }
 
-        
+        if (lifeAmount.fillAmount > 0 && lifeAmount.fillAmount <= 0.5f)
+        {
+            anim.SetInteger("transition", 1);
+
+        }
+
+
 
         if (lifeAmount.fillAmount <= 0)
         {
             
             lifeAmount.fillAmount = 0;
             explosion.SetActive(true);
-            anim.SetInteger("transition", 3);
+            anim.SetInteger("transition", 2);
             Destroy(gameObject, 0.4f);
 
         }
