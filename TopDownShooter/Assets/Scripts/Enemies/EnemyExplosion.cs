@@ -9,17 +9,46 @@ public class EnemyExplosion : MonoBehaviour
 
     [Header("ENEMY CONFIGURATION REFERENCE")]
     public Enemy enemy;
-    
+
+    public SpawnCollection spawnCollection;
+
+    private bool startVerification;
+
+    private void Start()
+    {
+        spawnCollection = GameObject.FindGameObjectWithTag("spawnCollection").GetComponent<SpawnCollection>();
+    }
+
+    private void Update()
+    {
+        DecrementEnemyQuantity();
+    }
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Player")
         {
             explosion.SetActive(true);
             col.gameObject.GetComponent<PlayerUI>().player.Life -= enemy.Damage;
-            SpawnEnemy.instance.quantEnemy--;
+
+            startVerification = true;
             Destroy(gameObject, 0.4f);
         }
     }
 
-   
+    private void DecrementEnemyQuantity()
+    {
+        if (startVerification)
+        {
+            for (int i = 6; i < 10; i++)
+            {
+                if (gameObject.layer == i)
+                {
+                    spawnCollection.spawnList[i - 6].GetComponent<SpawnEnemy>().spawnConfig.QuantEnemy--;
+                    startVerification = false;
+                }
+            }
+        }
+    }
+
+
 }

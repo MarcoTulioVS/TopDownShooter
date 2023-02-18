@@ -15,8 +15,18 @@ public class CannonBallCollision : MonoBehaviour
 
     private bool damageApplied;
 
+    public SpawnCollection spawnCollection;
+
+    private bool startVerification;
+
+    private GameObject collidedObj;
+    private void Start()
+    {
+        spawnCollection = GameObject.FindGameObjectWithTag("spawnCollection").GetComponent<SpawnCollection>();
+    }
     private void Update()
     {
+        DecrementEnemyQuantity();
         DestroyObject();
     }
     private void OnTriggerEnter2D(Collider2D col)
@@ -36,7 +46,10 @@ public class CannonBallCollision : MonoBehaviour
                 damageApplied = true;
                 col.GetComponent<Collider2D>().enabled = false;
                 GameController.instance.scoreValue += 10;
-                SpawnEnemy.instance.quantEnemy--;
+                
+                startVerification = true;
+                collidedObj = col.gameObject;
+                
             }
         }
 
@@ -64,5 +77,20 @@ public class CannonBallCollision : MonoBehaviour
     private void DestroyObject()
     {
         Destroy(gameObject, 3f);
+    }
+
+    private void DecrementEnemyQuantity()
+    {
+        if (startVerification)
+        {
+            for (int i = 6; i < 10; i++)
+            {
+                if (collidedObj.gameObject.layer == i)
+                {
+                    spawnCollection.spawnList[i - 6].GetComponent<SpawnEnemy>().spawnConfig.QuantEnemy--;
+                    startVerification = false;
+                }
+            }
+        }
     }
 }

@@ -7,6 +7,7 @@ TagManager:
   - enemy
   - area
   - ballEnemy
+  - spawnCollection
   layers:
   - Default
   - TransparentFX
@@ -14,10 +15,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - spawn1
+  - spawn2
+  - spawn3
+  - spawn4
   - 
   - 
   - 

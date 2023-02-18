@@ -19,6 +19,7 @@ public class EnemyUI : MonoBehaviour
     private float life;
 
     public float Life { get { return this.life; } set { this.life = value; } }
+
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
