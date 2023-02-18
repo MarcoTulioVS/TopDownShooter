@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6637c8cbe44224642b4f1e6483468d16, type: 3}
   m_Name: ConfigGame
   m_EditorClassIdentifier: 
-  timeMatch: 3
-  timeSpawnEnemy: 2
+  timeMatch: 0
+  timeSpawnEnemy: 0

@@ -74,11 +74,7 @@ public class GameController : MonoBehaviour
         score.text = scoreValue.ToString();
     }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-
+    
     private void PauseGame()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
