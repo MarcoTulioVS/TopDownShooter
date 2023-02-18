@@ -84,7 +84,7 @@ public class PlayerAttack : MonoBehaviour
         if (Time.time > nextFire)
         {
             nextFire= Time.time + fireRate;
-
+            SoundController.instance.PlayAudio(SoundController.instance.audios[0]);
             shootsDirection[0] = (tr1.position - transform.position).normalized;
             shootsDirection[1] = (tr2.position - transform.position).normalized;
             shootsDirection[2] = (tr3.position - transform.position).normalized;
@@ -105,7 +105,7 @@ public class PlayerAttack : MonoBehaviour
         if (Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
-
+            SoundController.instance.PlayAudio(SoundController.instance.audios[0]);
             shootsDirection[3] = (tr1.position - transform.position).normalized;
             shootsDirection[4] = (tr2.position - transform.position).normalized;
             shootsDirection[5] = (tr3.position - transform.position).normalized;
