@@ -59,6 +59,7 @@ public class EnemyCollisionAttack : MonoBehaviour
     IEnumerator Attack()
     {
         isShooting = true;
+        SoundController.instance.PlayAudio(SoundController.instance.audios[0]);
         Vector3 shootDirection = (pointShoot.position - ship.position).normalized;
         rbShoot = Instantiate(prefabCannonBall, pointShoot.position, ship.rotation);
         rbShoot.AddForce(shootDirection * enemyMovement.enemy.ShootForce, ForceMode2D.Impulse);

@@ -54,6 +54,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && Time.time>nextFire)
         {
+            SoundController.instance.PlayAudio(SoundController.instance.audios[0]);
             nextFire = Time.time + fireRate;
             Vector3 shootDirection = (pointShoot.position - transform.position).normalized;
             rbCannonBall = Instantiate(prefabCannonBall, pointShoot.position, Quaternion.identity);

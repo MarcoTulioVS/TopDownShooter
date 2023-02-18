@@ -28,6 +28,7 @@ public class EnemyExplosion : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             explosion.SetActive(true);
+            SoundController.instance.PlayAudio(SoundController.instance.audios[1]);
             col.gameObject.GetComponent<PlayerUI>().player.Life -= enemy.Damage;
 
             startVerification = true;
